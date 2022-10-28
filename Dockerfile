@@ -8,12 +8,12 @@ WORKDIR /go/src/crowdsec
 COPY . .
 
 RUN make release && \ 
-    tar xzvf cs-cloud-firewall-bouncer.tgz && \
-    cd cs-cloud-firewall-bouncer-v*/ && \
-    install -v -m 755 -D ./cs-cloud-firewall-bouncer "/usr/local/bin/cs-cloud-firewall-bouncer"
+    tar xzvf crowdsec-cloud-firewall-bouncer.tgz && \
+    cd crowdsec-cloud-firewall-bouncer-v*/ && \
+    install -v -m 755 -D ./crowdsec-cloud-firewall-bouncer "/usr/local/bin/crowdsec-cloud-firewall-bouncer"
 
 FROM alpine:latest
-COPY --from=build /usr/local/bin/cs-cloud-firewall-bouncer /usr/local/bin/cs-cloud-firewall-bouncer
+COPY --from=build /usr/local/bin/crowdsec-cloud-firewall-bouncer /usr/local/bin/crowdsec-cloud-firewall-bouncer
 
 COPY docker/entrypoint.sh /etc/crowdsec/start.sh
 

@@ -9,7 +9,7 @@ import (
 	"github.com/crowdsecurity/crowdsec/pkg/types"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/models"
 	"gopkg.in/natefinch/lumberjack.v2"
 	"gopkg.in/yaml.v2"
 )
@@ -71,7 +71,7 @@ func GenerateConfig(configBuff []byte) (*BouncerConfig, error) {
 		}
 		var LogOutput *lumberjack.Logger //io.Writer
 		LogOutput = &lumberjack.Logger{
-			Filename:   config.LogDir + "/cs-cloud-firewall-bouncer.log",
+			Filename:   config.LogDir + "/crowdsec-cloud-firewall-bouncer.log",
 			MaxSize:    500, //megabytes
 			MaxBackups: 3,
 			MaxAge:     28,   //days

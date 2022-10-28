@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/models"
 	log "github.com/sirupsen/logrus"
 )
 

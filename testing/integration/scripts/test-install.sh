@@ -3,7 +3,7 @@
 apt-get update && apt-get install -y gettext-base
 
 mkdir release
-cp ./cs-cloud-firewall-bouncer release/
+cp ./crowdsec-cloud-firewall-bouncer release/
 cp -R ./config release/
 cp ./scripts/install.sh release/
 
@@ -27,6 +27,6 @@ crowdsec
 EOF
 popd || exit 1
 
-diff /etc/crowdsec/cs-cloud-firewall-bouncer/cs-cloud-firewall-bouncer.yaml testing/integration/scripts/expected-config.yaml && \
+diff /etc/crowdsec/crowdsec-cloud-firewall-bouncer/crowdsec-cloud-firewall-bouncer.yaml testing/integration/scripts/expected-config.yaml && \
 echo "Install script test completed successfully"
 

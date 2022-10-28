@@ -1,7 +1,7 @@
 package testing
 
 import (
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/models"
 )
 
 type FakeClientEmpty struct{}

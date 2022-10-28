@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-BIN_PATH_INSTALLED="/usr/local/bin/cs-cloud-firewall-bouncer"
-BIN_PATH="./cs-cloud-firewall-bouncer"
-CONFIG_DIR="/etc/crowdsec/cs-cloud-firewall-bouncer/"
-SYSTEMD_PATH_FILE="/etc/systemd/system/cs-cloud-firewall-bouncer.service"
+BIN_PATH_INSTALLED="/usr/local/bin/crowdsec-cloud-firewall-bouncer"
+BIN_PATH="./crowdsec-cloud-firewall-bouncer"
+CONFIG_DIR="/etc/crowdsec/crowdsec-cloud-firewall-bouncer/"
+SYSTEMD_PATH_FILE="/etc/systemd/system/crowdsec-cloud-firewall-bouncer.service"
 API_URL=""
 API_KEY=""
 GCP_DISABLED=true
@@ -28,7 +28,7 @@ gen_lapi_config() {
     * )
         API_URL="http://localhost:8080/"
         SUFFIX=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 8)
-        API_KEY=$(cscli bouncers add cs-cloud-firewall-bouncer-${SUFFIX} -o raw)
+        API_KEY=$(cscli bouncers add crowdsec-cloud-firewall-bouncer-${SUFFIX} -o raw)
     ;;
     esac
 }
@@ -89,8 +89,8 @@ gen_cloudarmor_config() {
 install_bouncer() {
 	install -v -m 755 -D "${BIN_PATH}" "${BIN_PATH_INSTALLED}"
 	mkdir -p "${CONFIG_DIR}"
-	cp "./config/cs-cloud-firewall-bouncer.yaml" "${CONFIG_DIR}cs-cloud-firewall-bouncer.yaml"
-	CFG=${CONFIG_DIR} BIN=${BIN_PATH_INSTALLED} envsubst < ./config/cs-cloud-firewall-bouncer.service > "${SYSTEMD_PATH_FILE}"
+	cp "./config/crowdsec-cloud-firewall-bouncer.yaml" "${CONFIG_DIR}crowdsec-cloud-firewall-bouncer.yaml"
+	CFG=${CONFIG_DIR} BIN=${BIN_PATH_INSTALLED} envsubst < ./config/crowdsec-cloud-firewall-bouncer.service > "${SYSTEMD_PATH_FILE}"
 	systemctl daemon-reload
 }
 
@@ -98,18 +98,18 @@ gen_config_file() {
     GCP_DISABLED=${GCP_DISABLED} GCP_PROJECT_ID=${GCP_PROJECT_ID} GCP_NETWORK_ID=${GCP_NETWORK_ID} \
     AWS_DISABLED=${AWS_DISABLED} AWS_REGION=${AWS_REGION} AWS_FIREWALL_POLICY=${AWS_FIREWALL_POLICY} AWS_CAPACITY=${AWS_CAPACITY} AWS_RULE_GROUP_PRIORITY=${AWS_RULE_GROUP_PRIORITY} \
     CLOUDARMOR_DISABLED=${CLOUDARMOR_DISABLED} CLOUDARMOR_PROJECT_ID=${CLOUDARMOR_PROJECT_ID} CLOUDARMOR_POLICY=${CLOUDARMOR_POLICY} \
-    API_URL=${API_URL} API_KEY=${API_KEY} RULE_NAME_PREFIX=${RULE_NAME_PREFIX} envsubst < ./config/cs-cloud-firewall-bouncer.yaml > "${CONFIG_DIR}cs-cloud-firewall-bouncer.yaml"
+    API_URL=${API_URL} API_KEY=${API_KEY} RULE_NAME_PREFIX=${RULE_NAME_PREFIX} envsubst < ./config/crowdsec-cloud-firewall-bouncer.yaml > "${CONFIG_DIR}crowdsec-cloud-firewall-bouncer.yaml"
 }
 
 if ! [ $(id -u) = 0 ]; then
     log_err "Please run the install script as root or with sudo"
     exit 1
 fi
-echo "Installing cs-cloud-firewall-bouncer"
+echo "Installing crowdsec-cloud-firewall-bouncer"
 install_bouncer
 gen_lapi_config
 gen_providers_config
 gen_config_file
-systemctl enable cs-cloud-firewall-bouncer.service
-systemctl start cs-cloud-firewall-bouncer.service
-echo "cs-cloud-firewall-bouncer service has been installed!"
+systemctl enable crowdsec-cloud-firewall-bouncer.service
+systemctl start crowdsec-cloud-firewall-bouncer.service
+echo "crowdsec-cloud-firewall-bouncer service has been installed!"

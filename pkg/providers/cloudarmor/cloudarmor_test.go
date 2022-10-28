@@ -3,7 +3,7 @@ package cloudarmor
 import (
 	"testing"
 
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/models"
 	"google.golang.org/api/compute/v1"
 	"gotest.tools/assert"
 )

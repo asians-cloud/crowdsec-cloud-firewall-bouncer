@@ -10,7 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/networkfirewall"
 	"github.com/aws/aws-sdk-go/service/networkfirewall/networkfirewalliface"
 	backoff "github.com/cenkalti/backoff/v4"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/models"
 	"github.com/sirupsen/logrus"
 )
 

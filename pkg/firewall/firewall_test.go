@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	csmodels "github.com/crowdsecurity/crowdsec/pkg/models"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/providers"
-	testingUtils "github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/testing"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/providers"
+	testingUtils "github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/testing"
 	"github.com/stretchr/testify/assert"
 )
 

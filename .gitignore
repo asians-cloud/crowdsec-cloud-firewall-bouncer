@@ -19,7 +19,7 @@
 
 .local-only
 
-cs-cloud-firewall-bouncer
-cs-cloud-firewall-bouncer_instr-bin
+crowdsec-cloud-firewall-bouncer
+crowdsec-cloud-firewall-bouncer_instr-bin
 
 log/

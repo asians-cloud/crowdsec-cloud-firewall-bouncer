@@ -86,7 +86,7 @@ docker run -it --rm --network crowdsec \
  -v $(pwd)/config-bouncer.yaml:/etc/crowdsec/config.d/config.yaml \
  -v $(pwd)/gcp-sa.json:/auth/gcp-sa.json \
  -e GOOGLE_APPLICATION_CREDENTIALS=/auth/gcp-sa.json \
- fallard/cs-cloud-firewall-bouncer
+ fallard/crowdsec-cloud-firewall-bouncer
 ```
 
 You can now see the bouncer in action by manually adding a decisions using cscli

@@ -10,24 +10,24 @@ import (
 	"github.com/confluentinc/bincover"
 	"github.com/coreos/go-systemd/daemon"
 	csbouncer "github.com/crowdsecurity/go-cs-bouncer"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/config"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/firewall"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/providers"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/providers/aws"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/providers/cloudarmor"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/providers/gcp"
-	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/version"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/config"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/firewall"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/providers"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/providers/aws"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/providers/cloudarmor"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/providers/gcp"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/version"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/tomb.v2"
 )
 
 const (
-	name = "cs-cloud-firewall-bouncer"
+	name = "crowdsec-cloud-firewall-bouncer"
 )
 
 var (
-	// Injected from linker flags like `go build -ldflags "-X github.com/asians-cloud/cs-cloud-firewall-bouncer.isTest=true"`
+	// Injected from linker flags like `go build -ldflags "-X github.com/asians-cloud/crowdsec-cloud-firewall-bouncer.isTest=true"`
 	isTest = "false"
 )
 

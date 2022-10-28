@@ -16,7 +16,7 @@ var configPath = flag.String("bin-c", "", "path to config file")
 func TestMainMethod(t *testing.T) {
 	log.Infof("Testing")
 
-	const binPath = "./cs-cloud-firewall-bouncer_instr-bin"
+	const binPath = "./crowdsec-cloud-firewall-bouncer_instr-bin"
 	// 1. Running a `go test` command to compile the instrumented binary.
 	buildTestCmd := exec.Command("./compile_instr_bin.sh")
 	output, err := buildTestCmd.CombinedOutput()

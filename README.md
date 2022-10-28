@@ -2,10 +2,10 @@
 <a href="https://github.com/crowdsecurity/crowdsec"><img src="https://github.com/crowdsecurity/crowdsec/raw/master/docs/assets/images/crowdsec_logo.png" alt="CrowdSec" title="CrowdSec" width="400" height="240" style="max-width:100%;"></a>
 </p>
 <p align="center">
-<a href='https://github.com/asians-cloud/cs-cloud-firewall-bouncer/actions?query=workflow%3Abuild'><img src='https://github.com/asians-cloud/cs-cloud-firewall-bouncer/workflows/build/badge.svg' alt='Build Status' /></a>
-<a href='https://github.com/asians-cloud/cs-cloud-firewall-bouncer/actions?query=branch%3Amain+workflow%3Atests'><img src='https://github.com/asians-cloud/cs-cloud-firewall-bouncer/workflows/tests/badge.svg?branch=main' alt='Tests Status' /></a>
-<a href='https://coveralls.io/github/asians-cloud/cs-cloud-firewall-bouncer?branch=main'><img src='https://coveralls.io/repos/github/asians-cloud/cs-cloud-firewall-bouncer/badge.svg?branch=main' alt='Coverage Status' /></a>
-<a href='https://goreportcard.com/report/github.com/asians-cloud/cs-cloud-firewall-bouncer'><img src='https://goreportcard.com/badge/github.com/asians-cloud/cs-cloud-firewall-bouncer' alt='Go Report Card' /></a>
+<a href='https://github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/actions?query=workflow%3Abuild'><img src='https://github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/workflows/build/badge.svg' alt='Build Status' /></a>
+<a href='https://github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/actions?query=branch%3Amain+workflow%3Atests'><img src='https://github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/workflows/tests/badge.svg?branch=main' alt='Tests Status' /></a>
+<a href='https://coveralls.io/github/asians-cloud/crowdsec-cloud-firewall-bouncer?branch=main'><img src='https://coveralls.io/repos/github/asians-cloud/crowdsec-cloud-firewall-bouncer/badge.svg?branch=main' alt='Coverage Status' /></a>
+<a href='https://goreportcard.com/report/github.com/asians-cloud/crowdsec-cloud-firewall-bouncer'><img src='https://goreportcard.com/badge/github.com/asians-cloud/crowdsec-cloud-firewall-bouncer' alt='Go Report Card' /></a>
 <a href='https://opensource.org/licenses/MIT'><img src='https://img.shields.io/badge/License-MIT-yellow.svg' alt='License: MIT' /></a>
 
 </p>
@@ -36,7 +36,7 @@ A complete step-by-step example of using the bouncer docker image with the GCP p
 
 ## Using Docker
 
-You can run this bouncer using the [docker image](https://hub.docker.com/r/asians-cloud/cs-cloud-firewall-bouncer).
+You can run this bouncer using the [docker image](https://hub.docker.com/r/asians-cloud/crowdsec-cloud-firewall-bouncer).
 
 You will need to create the configuration file and mount it on the docker container. By default, the bouncer will look for the config at `/etc/crowdsec/config.d/config.yaml` but this can be overridden with the `CONFIG_PATH` environment variable.
 
@@ -44,10 +44,10 @@ You will need to create the configuration file and mount it on the docker contai
 
 ### With installer
 
-First, download the latest [`cs-cloud-firewall-bouncer` release](https://github.com/asians-cloud/cs-cloud-firewall-bouncer/releases).
+First, download the latest [`crowdsec-cloud-firewall-bouncer` release](https://github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/releases).
 
 ```sh
-$ tar xzvf cs-cloud-firewall-bouncer.tgz
+$ tar xzvf crowdsec-cloud-firewall-bouncer.tgz
 $ sudo ./install.sh
 ```
 
@@ -56,11 +56,11 @@ $ sudo ./install.sh
 Run the following commands:
 
 ```bash
-git clone https://github.com/asians-cloud/cs-cloud-firewall-bouncer.git
-cd cs-cloud-firewall-bouncer/
+git clone https://github.com/asians-cloud/crowdsec-cloud-firewall-bouncer.git
+cd crowdsec-cloud-firewall-bouncer/
 make release
-tar xzvf cs-cloud-firewall-bouncer.tgz
-cd cs-cloud-firewall-bouncer-v*/
+tar xzvf crowdsec-cloud-firewall-bouncer.tgz
+cd crowdsec-cloud-firewall-bouncer-v*/
 sudo ./install.sh
 ```
 
@@ -69,26 +69,26 @@ sudo ./install.sh
 If your bouncer run on the same machine as your crowdsec local API, you can start the service directly since the `install.sh` took care of the configuration.
 
 ```sh
-sudo systemctl start cs-cloud-firewall-bouncer
+sudo systemctl start crowdsec-cloud-firewall-bouncer
 ```
 
 ### Upgrade
 
-If you already have `cs-cloud-firewall-bouncer` installed as a service, please download the [latest release](https://github.com/asians-cloud/cs-cloud-firewall-bouncer/releases) and run the following commands to upgrade it:
+If you already have `crowdsec-cloud-firewall-bouncer` installed as a service, please download the [latest release](https://github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/releases) and run the following commands to upgrade it:
 
 ```bash
-tar xzvf cs-cloud-firewall-bouncer.tgz
-cd cs-cloud-firewall-bouncer-v*/
+tar xzvf crowdsec-cloud-firewall-bouncer.tgz
+cd crowdsec-cloud-firewall-bouncer-v*/
 sudo ./upgrade.sh
 ```
 
 ## Configuration
 
-Before starting the `cs-cloud-firewall-bouncer` service, please edit the configuration to add your cloud provider configuration, as well as the crowdsec local API url and key.
-The default configuration file is located under : `/etc/crowdsec/cs-cloud-firewall-bouncer/`
+Before starting the `crowdsec-cloud-firewall-bouncer` service, please edit the configuration to add your cloud provider configuration, as well as the crowdsec local API url and key.
+The default configuration file is located under : `/etc/crowdsec/crowdsec-cloud-firewall-bouncer/`
 
 ```sh
-$ vim /etc/crowdsec/cs-cloud-firewall-bouncer/cs-cloud-firewall-bouncer.yaml
+$ vim /etc/crowdsec/crowdsec-cloud-firewall-bouncer/crowdsec-cloud-firewall-bouncer.yaml
 ```
 
 ```yaml

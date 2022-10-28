@@ -1,4 +1,4 @@
-module github.com/asians-cloud/cs-cloud-firewall-bouncer
+module github.com/asians-cloud/crowdsec-cloud-firewall-bouncer
 
 go 1.15
 
