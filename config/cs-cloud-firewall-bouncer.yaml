@@ -1,0 +1,23 @@
+cloud_providers:
+  gcp:
+    disabled: ${GCP_DISABLED}
+    project_id: ${GCP_PROJECT_ID}
+    network: ${GCP_NETWORK_ID}
+  aws:
+    disabled: ${AWS_DISABLED}
+    region: ${AWS_REGION}
+    firewall_policy: ${AWS_FIREWALL_POLICY}
+    capacity: ${AWS_CAPACITY}
+    priority: ${AWS_RULE_GROUP_PRIORITY}
+  cloudarmor:
+    disabled: ${CLOUDARMOR_DISABLED}
+    project_id: ${CLOUDARMOR_PROJECT_ID}
+    policy: ${CLOUDARMOR_POLICY}
+rule_name_prefix: ${RULE_NAME_PREFIX}
+update_frequency: 10s
+daemonize: true
+log_mode: file
+log_dir: /var/log/
+log_level: info
+api_url: ${API_URL}
+api_key: ${API_KEY}
