@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	csmodels "github.com/crowdsecurity/crowdsec/pkg/models"
-	"github.com/fallard84/cs-cloud-firewall-bouncer/pkg/models"
-	"github.com/fallard84/cs-cloud-firewall-bouncer/pkg/providers"
+	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/providers"
 	"github.com/sethvargo/go-diceware/diceware"
 	log "github.com/sirupsen/logrus"
 )

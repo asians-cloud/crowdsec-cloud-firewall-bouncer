@@ -16,10 +16,10 @@ BUILD_VERSION?="$(shell git describe --tags `git rev-list --tags --max-count=1`)
 BUILD_GOVERSION="$(shell go version | cut -d " " -f3 | sed -r 's/[go]+//g')"
 BUILD_TIMESTAMP=$(shell date +%F"_"%T)
 BUILD_TAG="$(shell git rev-parse HEAD)"
-export LD_OPTS=-ldflags "-s -w -X github.com/fallard84/cs-cloud-firewall-bouncer/pkg/version.Version=$(BUILD_VERSION) \
--X github.com/fallard84/cs-cloud-firewall-bouncer/pkg/version.BuildDate=$(BUILD_TIMESTAMP) \
--X github.com/fallard84/cs-cloud-firewall-bouncer/pkg/version.Tag=$(BUILD_TAG) \
--X github.com/fallard84/cs-cloud-firewall-bouncer/pkg/version.GoVersion=$(BUILD_GOVERSION)"
+export LD_OPTS=-ldflags "-s -w -X github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/version.Version=$(BUILD_VERSION) \
+-X github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/version.BuildDate=$(BUILD_TIMESTAMP) \
+-X github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/version.Tag=$(BUILD_TAG) \
+-X github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/version.GoVersion=$(BUILD_GOVERSION)"
 
 RELDIR = "cs-cloud-firewall-bouncer-${BUILD_VERSION}"
 
@@ -30,7 +30,7 @@ build: clean
 	$(GOBUILD) $(LD_OPTS) -o $(BINARY_NAME) -v
 
 test:
-	@$(GOTEST) -v github.com/fallard84/cs-cloud-firewall-bouncer/pkg/...
+	@$(GOTEST) -v github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/...
 
 clean:
 	@rm -f $(BINARY_NAME)

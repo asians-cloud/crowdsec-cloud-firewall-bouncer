@@ -1,4 +1,4 @@
-module github.com/fallard84/cs-cloud-firewall-bouncer
+module github.com/asians-cloud/cs-cloud-firewall-bouncer
 
 go 1.15
 

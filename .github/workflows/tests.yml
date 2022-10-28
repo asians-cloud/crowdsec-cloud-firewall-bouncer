@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: go build && go get -u github.com/jandelgado/gcov2lcov github.com/wadey/gocovmerge
       - name: Unit tests
-        run: go test -v -coverprofile=unit.out -covermode=set github.com/fallard84/cs-cloud-firewall-bouncer/pkg/...
+        run: go test -v -coverprofile=unit.out -covermode=set github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/...
       - name: Integration tests
         run: ./testing/integration/bouncer/test.sh
       - name: merge coverage

@@ -1,7 +1,7 @@
 package providers
 
 import (
-	"github.com/fallard84/cs-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
 )
 
 // CloudClient is an interface representing cloud providers client

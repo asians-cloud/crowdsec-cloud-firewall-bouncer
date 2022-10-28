@@ -7,7 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/networkfirewall"
 	"github.com/aws/aws-sdk-go/service/networkfirewall/networkfirewalliface"
-	"github.com/fallard84/cs-cloud-firewall-bouncer/pkg/models"
+	"github.com/asians-cloud/cs-cloud-firewall-bouncer/pkg/models"
 	"gotest.tools/assert"
 )
 
