@@ -17,6 +17,7 @@ import (
 	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/providers/aws"
 	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/providers/cloudarmor"
 	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/providers/gcp"
+	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/providers/azure"
 	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/version"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/tomb.v2"
