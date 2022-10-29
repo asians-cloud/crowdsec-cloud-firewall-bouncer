@@ -3,6 +3,15 @@ cloud_providers:
     disabled: ${GCP_DISABLED}
     project_id: ${GCP_PROJECT_ID}
     network: ${GCP_NETWORK_ID}
+  azure:
+    disabled: ${AZURE_DISABLED}
+    subscription_id: ${AZURE_SUBSCRIPTION_ID}
+    resource_group: ${AZURE_RESOURCE_GROUP}
+    network: ${GCP_NETWORK_ID}
+    priority: ${AZURE_RULE_GROUP_PRIORITY}
+    capacity: ${AZURE_CAPACITY}
+    max_rules: ${AZURE_MAX_RULES}
+    user_agent: ${AZURE_USER_AGENT} 
   aws:
     disabled: ${AWS_DISABLED}
     region: ${AWS_REGION}

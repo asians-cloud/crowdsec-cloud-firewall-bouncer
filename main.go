@@ -92,6 +92,13 @@ func getProviderClients(config config.BouncerConfig) ([]providers.CloudClient, e
 		}
 		cloudClients = append(cloudClients, gcpClient)
 	}
+	if (models.AzureConfig{}) != config.CloudProviders.Azure && !config.CloudProviders.Azure.Disabled {
+		azureClient, err := azure.NewClient(&config.CloudProviders.Azure)
+		if err != nil {
+			return nil, err
+		}
+		cloudClients = append(cloudClients, azureClient)
+	}
 	if (models.AWSConfig{}) != config.CloudProviders.AWS && !config.CloudProviders.AWS.Disabled {
 		awsClient, err := aws.NewClient(&config.CloudProviders.AWS)
 		if err != nil {

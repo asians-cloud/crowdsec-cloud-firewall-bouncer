@@ -2,6 +2,7 @@ package models
 
 type CloudProviders struct {
 	GCP        GCPConfig        `yaml:"gcp"`
+	Azure      AzureConfig      `yaml:"azure"`
 	AWS        AWSConfig        `yaml:"aws"`
 	CloudArmor CloudArmorConfig `yaml:"cloudarmor"`
 }
@@ -12,6 +13,18 @@ type GCPConfig struct {
 	Network   string `yaml:"network"`
 	Priority  int64  `yaml:"priority"`
 	MaxRules  int    `yaml:"max_rules"`
+	// Endpoint is used for making calls to a mock server instead of the real Google services endpoints.
+	Endpoint string `yaml:"endpoint"`
+}
+
+type AzureConfig struct {
+	Disabled  bool   `yaml:"disabled"`
+	SubscriptID string `yaml:"subscription_id"`
+	ResourceGroup string `yaml:"resource_group"`
+	Network   string `yaml:"network"`
+	Priority  int64  `yaml:"priority"`
+	MaxRules  int    `yaml:"max_rules"`
+	UserAgent string `yaml:"user_agent"`
 	// Endpoint is used for making calls to a mock server instead of the real Google services endpoints.
 	Endpoint string `yaml:"endpoint"`
 }
