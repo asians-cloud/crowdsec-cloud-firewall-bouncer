@@ -3,6 +3,10 @@ module github.com/asians-cloud/crowdsec-cloud-firewall-bouncer
 go 1.15
 
 require (
+	github.com/Azure/azure-sdk-for-go v67.0.0+incompatible // indirect
+	github.com/Azure/go-autorest/autorest v0.11.28 // indirect
+	github.com/Azure/go-autorest/autorest/to v0.4.0 // indirect
+	github.com/Azure/go-autorest/autorest/validation v0.3.1 // indirect
 	github.com/aws/aws-sdk-go v1.36.13
 	github.com/cenkalti/backoff/v4 v4.1.0
 	github.com/confluentinc/bincover v0.2.0
@@ -13,7 +17,6 @@ require (
 	github.com/sirupsen/logrus v1.7.0
 	github.com/stretchr/testify v1.6.1
 	github.com/vjeantet/grok v1.0.1 // indirect
-	golang.org/x/net v0.0.0-20201216054612-986b41b23924 // indirect
 	golang.org/x/oauth2 v0.0.0-20201208152858-08078c50e5b5
 	google.golang.org/api v0.36.0
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
