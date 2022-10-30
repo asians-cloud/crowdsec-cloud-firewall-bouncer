@@ -24,6 +24,7 @@ type BouncerConfig struct {
 	LogLevel        log.Level             `yaml:"log_level"`
 	APIUrl          string                `yaml:"api_url"`
 	APIKey          string                `yaml:"api_key"`
+	BouncingOnType  string                `yaml:"bouncing_on_type"`
 }
 
 // checkRuleNamePrefixValid validates that the rule name prefix complies specific requirements.

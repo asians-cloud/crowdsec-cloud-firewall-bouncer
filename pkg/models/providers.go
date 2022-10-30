@@ -5,6 +5,8 @@ type CloudProviders struct {
 	Azure      AzureConfig      `yaml:"azure"`
 	AWS        AWSConfig        `yaml:"aws"`
 	CloudArmor CloudArmorConfig `yaml:"cloudarmor"`
+
+	
 }
 
 type GCPConfig struct {
