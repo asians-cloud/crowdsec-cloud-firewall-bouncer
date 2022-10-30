@@ -18,15 +18,16 @@ type GCPConfig struct {
 }
 
 type AzureConfig struct {
-	Disabled  bool   `yaml:"disabled"`
-	SubscriptID string `yaml:"subscription_id"`
-	ResourceGroup string `yaml:"resource_group"`
-	Network   string `yaml:"network"`
-	Priority  int64  `yaml:"priority"`
-	MaxRules  int    `yaml:"max_rules"`
-	UserAgent string `yaml:"user_agent"`
+	Disabled        bool   `yaml:"disabled"`
+	SubscriptionID  string `yaml:"subscription_id"`
+	ResourceGroup   string `yaml:"resource_group"`
+	Network         string `yaml:"network"`
+	Priority        int64  `yaml:"priority"`
+	MaxRules        int    `yaml:"max_rules"`
+	Capacity        int    `yaml:"capacity"`
+	UserAgent       string `yaml:"user_agent"`
 	// Endpoint is used for making calls to a mock server instead of the real Google services endpoints.
-	Endpoint string `yaml:"endpoint"`
+	Endpoint        string `yaml:"endpoint"`
 }
 
 type CloudArmorConfig struct {

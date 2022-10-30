@@ -15,8 +15,11 @@ type Client struct {
 	subscription      string
 	GroupName         string
 	network           string
-	priority          int
+	priority          int64
 	maxRules          int
+	capacity          int
+	ruleGroupPriority int64
+
 }
 
 const (
@@ -46,14 +49,14 @@ func init() {
 	log = logrus.WithField("provider", providerName)
 }
 
-func assignDefault(config *models.AWSConfig) {
+func assignDefault(config *models.AzureConfig) {
 	if config.Capacity == 0 {
 		log.Debugf("Setting default rule group capacity (%d)", defaultCapacity)
 		config.Capacity = defaultCapacity
 	}
-	if config.RuleGroupPriority == 0 {
+	if config.Priority == 0 {
 		log.Debugf("Setting default lowest rule group priority (%d)", defaultPriority)
-		config.RuleGroupPriority = defaultPriority
+		config.Priority = defaultPriority
 	}
 }
 
@@ -66,14 +69,12 @@ func NewClient(config *models.AzureConfig) (*Client, error) {
 
 	assignDefault(config)
 
-	a, _ := iam.GetResourceManagementAuthorizer()
-	nsgClient.Authorizer = a
 	_ = svc.AddToUserAgent(config.UserAgent)
 	
 	return &Client{
 		svc:               svc,
 		subscription:  config.SubscriptionID,
-		GroupName: config.GroupName,
+		GroupName: config.ResourceGroup,
 		network:  config.Network,
 		priority: config.Priority,
 		maxRules: config.MaxRules,

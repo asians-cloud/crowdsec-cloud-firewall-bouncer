@@ -3,6 +3,7 @@ module github.com/asians-cloud/crowdsec-cloud-firewall-bouncer
 go 1.15
 
 require (
+	github.com/Azure-Samples/azure-sdk-for-go-samples/services v0.0.0-20220706094524-d9f41170eaf6 // indirect
 	github.com/Azure/azure-sdk-for-go v67.0.0+incompatible // indirect
 	github.com/Azure/go-autorest/autorest v0.11.28 // indirect
 	github.com/Azure/go-autorest/autorest/to v0.4.0 // indirect
