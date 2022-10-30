@@ -1,9 +1,6 @@
 package azure
 
 import (
-	"context"
-	"fmt"
-	"strings"
 	"github.com/asians-cloud/crowdsec-cloud-firewall-bouncer/pkg/models"
 	"github.com/sirupsen/logrus"
 	"github.com/Azure/azure-sdk-for-go/services/network/mgmt/2021-08-01/network"
@@ -36,6 +33,7 @@ func (c *Client) MaxRules() int {
 }
 
 func (c *Client) Priority() int64 {
+	
 	return c.ruleGroupPriority
 }
 
