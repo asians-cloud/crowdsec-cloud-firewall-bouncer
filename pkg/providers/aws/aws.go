@@ -48,7 +48,7 @@ func init() {
 	log = logrus.WithField("provider", providerName)
 }
 
-func assignDefault(config *models.AzureConfig) {
+func assignDefault(config *models.AWSConfig) {
 	if config.Capacity == 0 {
 		log.Debugf("Setting default rule group capacity (%d)", defaultCapacity)
 		config.Capacity = defaultCapacity
